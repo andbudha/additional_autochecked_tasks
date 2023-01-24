@@ -11,7 +11,7 @@ type GreetingContainerPropsType = {
 
 export const pureAddUser = (name: string, setError: (error: string)=> void, setName: (name: string)=> void, addUserCallback: (name: string)=> void) => {
     // если имя пустое - показать ошибку, иначе - добавить юзера и очистить инпут
-    if(name === ' '){
+    if(name.trim() === ' '){
         setError('Ошибка! Введите имя!')
     } else {
         addUserCallback(name);
@@ -20,7 +20,7 @@ export const pureAddUser = (name: string, setError: (error: string)=> void, setN
 }
 
 export const pureOnBlur = (name: string, setError: (error: string)=> void) => { // если имя пустое - показать ошибку
-    if(name === ''){
+    if(name.trim() === ''){
         setError('Ошибка! Введите имя!');
     }
 }
@@ -32,13 +32,13 @@ export const pureOnEnter = (e: KeyboardEvent<HTMLInputElement>, addUser: ()=> vo
 }
 
 // более простой и понятный для новичков
-// function GreetingContainer(props: GreetingPropsType) {
+// function GreetingContainer(props: GreetingPropsType)
 
 // более современный и удобный для про :)
 const GreetingContainer = (props: GreetingContainerPropsType) => {
 
 
-    // деструктуризация пропсов
+
     const [name, setName] = useState<string>('') // need to fix any
     const [error, setError] = useState<string>('') // need to fix any
 
@@ -57,6 +57,7 @@ const GreetingContainer = (props: GreetingContainerPropsType) => {
     const onEnter = (e: KeyboardEvent<HTMLInputElement>) => {
         pureOnEnter(e, addUser)
     }
+
 
     const totalUsers = props.users.length // need to fix
     const lastUserName = name // need to fix
