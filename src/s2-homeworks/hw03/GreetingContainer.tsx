@@ -2,7 +2,7 @@ import React, { ChangeEvent, KeyboardEvent, useState } from 'react'
 import Greeting from './Greeting'
 import { UserType } from './HW3'
 import {Simulate} from "react-dom/test-utils";
-import error = Simulate.error;
+
 
 type GreetingContainerPropsType = {
     users: UserType[] // need to fix any
@@ -11,7 +11,7 @@ type GreetingContainerPropsType = {
 
 export const pureAddUser = (name: string, setError: (error: string)=> void, setName: (name: string)=> void, addUserCallback: (name: string)=> void) => {
     // если имя пустое - показать ошибку, иначе - добавить юзера и очистить инпут
-    if(name.trim() === ' '){
+    if(name.trim() === ''){
         setError('Ошибка! Введите имя!')
     } else {
         addUserCallback(name);
@@ -44,7 +44,7 @@ const GreetingContainer = (props: GreetingContainerPropsType) => {
 
     const setNameCallback = (e: ChangeEvent<HTMLInputElement>) => { // need to fix any
         setName(e.currentTarget.value); // need to fix
-        error && setError('')
+        {error && setError('')}
     }
     const addUser = () => {
         pureAddUser(name, setError, setName, props.addUserCallback)
@@ -60,7 +60,7 @@ const GreetingContainer = (props: GreetingContainerPropsType) => {
 
 
     const totalUsers = props.users.length // need to fix
-    const lastUserName = name // need to fix
+    const lastUserName = name// need to fix
 
     return (
         <Greeting
