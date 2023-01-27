@@ -60,7 +60,7 @@ const GreetingContainer = (props: GreetingContainerPropsType) => {
 
 
     const totalUsers = props.users.length // need to fix
-    const lastUserName = name// need to fix
+    const lastUserName = totalUsers > 0 ? props.users[totalUsers -1].name : '' ;
 
     return (
         <Greeting
