@@ -4,22 +4,31 @@
     align-items: center;
     width: 960px;
     margin: 0 auto;
+    height: 300px;
+    padding: 25px;
+
 }
 
 .inputs {
+    height: 100%;
     display: flex;
     flex-direction: column;
-    gap: 48px;
+    justify-content: flex-start;
+    gap: 20px;
 }
 
 .buttons {
+    height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     gap: 24px;
 }
 
 .checkboxes {
+    height: 100%;
     display: flex;
     flex-direction: column;
-    gap: 36px;
+    justify-content: flex-start;
+    gap: 25px;
 }
