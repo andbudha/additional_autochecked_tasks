@@ -1,23 +1,32 @@
 .input:focus {
+    outline: none;
+    border: solid 2px cornflowerblue;
+    border-radius: 5px;
 }
 
 .input {
     height: 30px;
     width: 250px;
+    border-radius: 5px;
+    border: 1px solid cornflowerblue;
 }
 
 .inputWrapper {
+
 }
 
 .superInput {
+    outline-color: cornflowerblue;
 }
 
 .errorInput {
-    color: #cc0000;
+    border: solid 2px red;
 }
 
 .errorInput:focus {
+    border: solid 2px red;
 }
 
 .error {
+    color: #cc0000;
 }
