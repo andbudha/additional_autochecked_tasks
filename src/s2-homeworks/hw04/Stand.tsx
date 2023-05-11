@@ -43,7 +43,10 @@ const Stand = () => {
             <div className={s.buttons}>
                 {/*обычная кнопка:*/}
                 <div>
-                    <SuperButton id={'hw4-super-button-default'}>
+                    <SuperButton
+                        id={'hw4-super-button-default'}
+                        xType={'default'}
+                    >
                         default
                     </SuperButton>
                 </div>
@@ -57,7 +60,7 @@ const Stand = () => {
                 <div>
                     <SuperButton
                         id={'hw4-super-button-disabled'}
-                        xType={'red'}
+                        //xType={'disabled'}
                         disabled
                     >
                         disabled
@@ -90,7 +93,7 @@ const Stand = () => {
                     <SuperCheckbox
                         id={'hw4-super-checkbox-like-old'}
                         checked={stateForAllCheckboxes}
-                        onChange={(e) => setChecked(e.currentTarget.checked)}
+                        onChangeChecked={setChecked}
                     />
                 </div>
             </div>
