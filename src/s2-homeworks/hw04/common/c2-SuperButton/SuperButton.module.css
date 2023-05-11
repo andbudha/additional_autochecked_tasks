@@ -1,40 +1,107 @@
+
 .button {
     width: 120px;
     height: 30px;
+    font-size: 1rem;
+    font-weight: 300;
+    font-family: "Helvetica Neue";
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
 }
 
 .disabled {
+    width: 120px;
+    height: 30px;
+    background-color: cornflowerblue;
+    opacity: 0.3;
+    color: red;
+    font-size: 1rem;
+    font-family: "Helvetica Neue";
+    border: 1px solid red;
+    border-radius: 3px;
 }
 
 .secondary {
+    width: 120px;
+    height: 30px;
+    background-color: white;
+    color: cornflowerblue;
+    font-size: 1rem;
+    font-family: "Helvetica Neue";
+    border: 1px solid cornflowerblue;
+    border-radius: 3px;
 }
 
 .default {
+    width: 120px;
+    height: 30px;
+    background-color: cornflowerblue;
     color: white;
-    background-color: #0066cc;
+    font-size: 1rem;
+    font-weight: 300;
+    font-family: "Helvetica Neue";
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+
 }
 
 .red {
+    width: 120px;
+    height: 30px;
+    background-color: red;
+    color: white;
+    font-size: 1rem;
+    font-weight: 300;
+    font-family: "Helvetica Neue";
+    border: none;
+    border-radius: 3px;
 }
 
 .default:hover {
+    width: 130px;
+    height: 30px;
+    background-color: royalblue;
 }
 
 .red:hover {
+    width: 130px;
+    height: 30px;
+    background-color: orangered;
 }
 
 .secondary:hover {
+    width: 130px;
+    height: 30px;
+    background-color: lightcyan;
 }
 
 
 .default:active {
+    width: 120px;
+    background-color: slateblue;
 }
 
 .secondary:active {
+    width: 120px;
+    background-color: skyblue;
+    color: white;
 }
 
 .red:active {
+    width: 120px;
+    background-color: darkred;
 }
 
 .button:disabled {
+    width: 120px;
+    height: 30px;
+    background-color: cornflowerblue;
+    opacity: 0.3;
+    color: red;
+    font-size: 1rem;
+    font-family: "Helvetica Neue";
+    border: 1px solid red;
+    border-radius: 3px;
 }
