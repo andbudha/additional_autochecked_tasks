@@ -12,7 +12,6 @@ type PropsType = {
 export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
     const sidebarClass = s.sidebar
         + (open ? ' ' + s.open : '')
-    console.log(open)
     return (
         <>
             {/*затемнение справа от открытого меню*/}
@@ -51,6 +50,14 @@ export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
                         className={({isActive})=> isActive ? s.active : s.inactive} // делает студент
                     >
                         Junior Plus
+                    </NavLink>
+                    <NavLink
+                        id={'hw5-error'}
+                        to={PATH.ERROR}
+                        onClick={handleClose}
+                        className={({isActive})=> isActive ? s.active : s.inactive} // делает студент
+                    >
+                        Error
                     </NavLink>
                 </nav>
             </aside>
