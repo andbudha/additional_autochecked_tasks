@@ -42,7 +42,8 @@
 }
 
 .nav a.active {
-
+    text-decoration: none;
+    color:#0059b3;
 }
 .close {
     display: flex;
@@ -54,11 +55,6 @@
 }
 
 .close img {
-}
-
-.active {
-    text-decoration: none;
-    color:#0059b3;
 }
 
 .inactive {

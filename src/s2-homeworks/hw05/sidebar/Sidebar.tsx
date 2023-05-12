@@ -51,14 +51,6 @@ export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
                     >
                         Junior Plus
                     </NavLink>
-                    <NavLink
-                        id={'hw5-error'}
-                        to={PATH.ERROR}
-                        onClick={handleClose}
-                        className={({isActive})=> isActive ? s.active : s.inactive} // делает студент
-                    >
-                        Error
-                    </NavLink>
                 </nav>
             </aside>
         </>
