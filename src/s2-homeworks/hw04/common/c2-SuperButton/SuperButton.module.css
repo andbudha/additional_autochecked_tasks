@@ -62,19 +62,19 @@
 }
 
 .default:hover {
-    width: 130px;
+    width: 121px;
     height: 30px;
     background-color: royalblue;
 }
 
 .red:hover {
-    width: 130px;
+    width: 121px;
     height: 30px;
     background-color: orangered;
 }
 
 .secondary:hover {
-    width: 130px;
+    width: 121px;
     height: 30px;
     background-color: lightcyan;
 }

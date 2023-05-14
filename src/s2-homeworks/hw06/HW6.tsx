@@ -27,7 +27,7 @@ const HW6 = () => {
     }
 
     return (
-        <div id={'hw6'}>
+        <div id={'hw6'} className={s.hw_container}>
             <div className={s2.hwTitle}>Homework #6</div>
 
             {/*демонстрация возможностей компоненты:*/}
@@ -45,7 +45,11 @@ const HW6 = () => {
                 </div>
 
                 <div className={s.buttonsContainer}>
-                    <SuperButton id={'hw6-save'} onClick={save}>
+                    <SuperButton
+                        id={'hw6-save'}
+                        onClick={save}
+                        xType={'default'}
+                    >
                         Save to ls
                     </SuperButton>
                     <SuperButton
