@@ -1,5 +1,18 @@
+.hw_container{
+    margin: 25px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 2px 3px 3px 1px gray;
+}
+
 .buttonsContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    padding: 10px;
 }
 
 .editableSpanContainer {
+    padding: 10px;
+    width: 350px;
 }
