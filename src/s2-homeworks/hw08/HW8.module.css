@@ -25,6 +25,10 @@
     margin: 10px 15px 10px 0;
 }
 
+.buttonsContainer >*:active {
+    width: 119px;
+}
+
 
 .container {
 }
