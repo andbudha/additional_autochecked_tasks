@@ -1,12 +1,22 @@
 .select {
-    width: 150px;
+    width: 200px;
     margin: 0 100px 0 0 ;
+    padding: 5px;
+    font-size: 1rem;
+    border-radius: 3px;
+    background-color: #FFF;
+    border: 1px royalblue solid;
+    outline-color: #0059b3;
 }
 
 
 .select:focus {
+
 }
 
+.option{
+    padding: 5px;
+}
 
 .option:hover {
 }
