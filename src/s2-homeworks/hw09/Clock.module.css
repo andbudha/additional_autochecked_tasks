@@ -1,14 +1,38 @@
-.buttonsContainer {
+.main_container {
+    margin: 25px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 2px 3px 3px 1px gray;
 }
 
-.clock {
+
+.buttonsContainer {
+    width: 275px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.title {
+    margin-left: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid lightgrey;
 }
 
 .watch {
+    width: 275px;
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+
 }
 
 .watch strong {
 }
 
 .more {
+    width: 275px;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0px;
 }
