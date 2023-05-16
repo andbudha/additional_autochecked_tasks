@@ -33,13 +33,20 @@ function Clock() {
         setShow(!show);
     }
 
+    {/*
     const stringTime = `${date.getHours()<10 ? '0' + date.getHours() : date.getHours()}
                                         :${date.getMinutes()<10 ? '0' + date.getMinutes() : date.getMinutes()}
                                         :${date.getSeconds()<10 ? '0' + date.getSeconds() : date.getSeconds()}` || <br/>
+    */}
+    const stringTime = date.toLocaleTimeString() || <br/>
     // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
 
+
+    {/*
     const stringDate = `${date.getDate()<10 ? '0' + date.getDate() : date.getDate()}
                                         .${date.getMonth() < 10 ? '0'+date.getMonth(): date.getMonth()}.${date.getFullYear()}` || <br/>
+    */}
+    const stringDate = date.toLocaleDateString() || <br/>
     // день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
 
 
