@@ -14,12 +14,24 @@
 .loader {
     width: 48px;
     height: 48px;
-    border: 5px solid #FFF;
-    border-bottom-color: transparent;
+    border-width: 3px;
+    border-style: dashed solid  solid dotted;
+    border-color: royalblue royalblue transparent royalblue;
     border-radius: 50%;
     display: inline-block;
+    position: relative;
     box-sizing: border-box;
     animation: rotation 1s linear infinite;
+}
+.loader::after {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    left: 20px;
+    top: 31px;
+    border: 10px solid transparent;
+    border-right-color: royalblue;
+    transform: rotate(-40deg);
 }
 
 @keyframes rotation {
