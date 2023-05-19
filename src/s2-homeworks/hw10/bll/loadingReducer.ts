@@ -1,26 +1,28 @@
 import {initialState} from "../../hw08/bll/homeWorkReducer";
 
+
+
 const initState = {
-    isLoading: false,
+    isLoading: false
 }
 
-type ActionType = LoadingActionType;
-export const loadingReducer = (state = initState, action: ActionType): {} => { // fix any
+type ActionType = loadingACType;
+export const loadingReducer = (state = initState, action: ActionType): typeof initState=> { // fix any
     switch (action.type) {
         // пишет студент  // need to fix
         case "CHANGE_LOADING":
-            return {...state, loading: action.isLoading }
+            return {...state, isLoading: action.payload.isLoading}
         default:
             return state
     }
 }
 
-type LoadingActionType = {
-    type: 'CHANGE_LOADING'
-    isLoading: boolean
-}
 
-export const loadingAC = (isLoading: boolean): LoadingActionType => ({
-    type: 'CHANGE_LOADING',
-    isLoading,
-})
+type loadingACType = ReturnType<typeof loadingAC>
+
+export const loadingAC = (isLoading: boolean)=> {
+    return  {
+        type: "CHANGE_LOADING",
+        payload: { isLoading }
+    }as const
+}
