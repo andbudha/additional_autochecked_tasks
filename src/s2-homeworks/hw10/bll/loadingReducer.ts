@@ -1,11 +1,15 @@
+import {initialState} from "../../hw08/bll/homeWorkReducer";
+
 const initState = {
     isLoading: false,
 }
 
-export const loadingReducer = (state = initState, action: any): any => { // fix any
+type ActionType = LoadingActionType;
+export const loadingReducer = (state = initState, action: ActionType): {} => { // fix any
     switch (action.type) {
         // пишет студент  // need to fix
-
+        case "CHANGE_LOADING":
+            return {...state, loading: action.isLoading }
         default:
             return state
     }
