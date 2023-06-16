@@ -63,7 +63,7 @@ function HW11() {
                                 id={'hw11-double-slider'}
                                 // сделать так чтоб value1/2 изменялось // пишет студент
                                 onChange={change2}
-                                value={value2}
+                                value={[value2[0], value2[1]]}
                             />
                         </div>
 
