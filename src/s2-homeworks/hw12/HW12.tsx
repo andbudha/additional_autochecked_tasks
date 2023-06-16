@@ -22,10 +22,13 @@ const themes = [
 
 const HW12 = () => {
     // взять ид темы из редакса
-    const themeId = 1;
+    const themeId = useSelector<ThemeStateType>(state => state.themeId);
+    console.log(themeId);
 
-    const change = (id: any) => { // дописать функцию
+    const dispatch = useDispatch();
 
+    const change = (id: number) => { // дописать функцию
+        dispatch(changeThemeId(id));
     }
 
     useEffect(() => {
