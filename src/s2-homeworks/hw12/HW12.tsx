@@ -20,7 +20,7 @@ const themes = [
 
 const HW12 = () => {
     // взять ид темы из редакса
-    const themeId = 1
+    const themeId = 1;
 
     const change = (id: any) => { // дописать функцию
 
@@ -31,7 +31,7 @@ const HW12 = () => {
     }, [themeId])
 
     return (
-        <div id={'hw12'}>
+        <div id={'hw12'} className={s.main_container}>
             <div id={'hw12-text'} className={s2.hwTitle}>
                 Homework #12
             </div>
@@ -40,8 +40,9 @@ const HW12 = () => {
                 <SuperSelect
                     id={'hw12-select-theme'}
                     className={s.select}
-                // сделать переключение тем
-
+                    // сделать переключение тем
+                    options={themes}
+                    onChangeOption={change}
                 />
             </div>
         </div>
