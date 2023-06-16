@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { ChangeEvent, useState } from 'react'
 import s from './HW11.module.css'
 import s2 from '../../s1-main/App.module.css'
 import { restoreState } from '../hw06/localStorage/localStorage'
@@ -13,20 +13,31 @@ import SuperRange from './common/c7-SuperRange/SuperRange'
 function HW11() {
     // for autotests // не менять // можно подсунуть в локалСторэдж нужные числа, 
     // чтоб увидеть как они отображаются
-    const [value1, setValue1] = useState(restoreState<number>('hw11-value1', 0))
-    const [value2, setValue2] = useState(restoreState<number[]>('hw11-value2', [100]))
+    const [value1, setValue1] = useState(restoreState<number>('hw11-value', 0))
+    const [value2, setValue2] = useState(restoreState<number[]>('hw11-value1', [0, 100]))
 
-    const change = (event: Event, value: number | number[]) => {
+    const change1 = (event: Event, value: number | number[]) => {
         // пишет студент // если пришёл массив - сохранить значения в оба useState, иначе в первый
-        if (typeof value === 'number') {
-            setValue1(value);
-        }
+        setValue1(value as number);
+        setValue2([value1, value2[1]])
+    }
 
-        if (!Array.isArray(value)) {
+    const minDistance = 1;
+    const change2 = (
+        event: Event,
+        newValue: number | number[],
+        activeThumb: number,
+    ) => {
+        if (!Array.isArray(newValue)) {
             return;
         }
 
-    }
+        if (activeThumb === 0) {
+            setValue2([Math.min(newValue[0], value2[1] - minDistance), value2[1]]);
+        } else {
+            setValue2([value2[0], Math.max(newValue[1], value2[0] + minDistance)]);
+        }
+    };
 
     return (
         <div id={'hw11'} className={s.main_container}>
@@ -40,23 +51,23 @@ function HW11() {
                             <SuperRange
                                 id={'hw11-single-slider'}
                                 // сделать так чтоб value1 изменялось // пишет студент
-                                onChange={change}
-
+                                onChange={change1}
+                                value={value1}
                             />
                         </div>
                     </div>
                     <div className={s.wrapper}>
-                        <span id={'hw11-value-1'} className={s.number}>{value1}</span>
+                        <span id={'hw11-value-1'} className={s.number}>{value2[0]}</span>
                         <div className={s.slider}>
                             <SuperRange
                                 id={'hw11-double-slider'}
                                 // сделать так чтоб value1/2 изменялось // пишет студент
-                                onChange={change}
-                                value={value1}
+                                onChange={change2}
+                                value={value2}
                             />
                         </div>
 
-                        <span id={'hw11-value-2'} className={s.number}>{value2}</span>
+                        <span id={'hw11-value-2'} className={s.number}>{value2[1]}</span>
                     </div>
                 </div>
             </div>
