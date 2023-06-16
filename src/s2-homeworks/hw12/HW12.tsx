@@ -1,9 +1,11 @@
+
+
 import React, { useEffect } from 'react'
 import s from './HW12.module.css'
 import s2 from '../../s1-main/App.module.css'
 import SuperSelect from '../hw07/common/c5-SuperSelect/SuperSelect'
 import { useDispatch, useSelector } from 'react-redux'
-import { changeThemeId } from './bll/themeReducer'
+import { ThemeStateType, changeThemeId } from './bll/themeReducer'
 
 /*
 * 1 - в файле themeReducer.ts написать нужные типы вместо any, дописать редьюсер
