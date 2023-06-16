@@ -12,7 +12,7 @@
 
 .wrapper {
     height: 35px;
-    display: flex;
+    /* display: flex; */
     align-items: center;
 }
 
