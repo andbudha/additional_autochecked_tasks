@@ -19,6 +19,7 @@ const HW13 = () => {
     const [text, setText] = useState('')
     const [info, setInfo] = useState('')
     const [image, setImage] = useState('')
+    const [OnOffBTN, setOnOffBTN] = useState(false);
 
     const send = (x?: boolean | null) => () => {
 
@@ -31,10 +32,12 @@ const HW13 = () => {
         setImage('')
         setText('')
         setInfo('...loading');
+        setOnOffBTN(true);
 
         axios
             .post(url, { success: x })
             .then((res) => {
+                setOnOffBTN(false);
                 if (res.status === 200) {
                     setCode('Код 200!');
                     setImage(success200);
@@ -44,7 +47,7 @@ const HW13 = () => {
             })
             .catch((e) => {
                 // дописать
-                console.log(e.request.status);
+                setOnOffBTN(false);
                 if (e.request.status === 0) {
                     setCode('Error!');
                     setImage(errorUnknown);
@@ -57,7 +60,7 @@ const HW13 = () => {
                     setInfo(e.response.data.info);
                 } else if (e.response.status === 500) {
                     setCode('Код 500!');
-                    setImage(error500);
+                    setImage(error400);
                     setText(e.response.data.errorText);
                     setInfo(e.response.data.info);
                 }
@@ -74,8 +77,8 @@ const HW13 = () => {
                         id={'hw13-send-true'}
                         onClick={send(true)}
                         xType={'secondary'}
-                    // дописать
-
+                        // дописать
+                        disabled={OnOffBTN}
                     >
                         Send true
                     </SuperButton>
@@ -83,8 +86,8 @@ const HW13 = () => {
                         id={'hw13-send-false'}
                         onClick={send(undefined)}
                         xType={'secondary'}
-                    // дописать
-
+                        // дописать
+                        disabled={OnOffBTN}
                     >
                         Send false
                     </SuperButton>
@@ -92,8 +95,8 @@ const HW13 = () => {
                         id={'hw13-send-undefined'}
                         onClick={send(false)}
                         xType={'secondary'}
-                    // дописать
-
+                        // дописать
+                        disabled={OnOffBTN}
                     >
                         Send undefined
                     </SuperButton>
@@ -101,8 +104,8 @@ const HW13 = () => {
                         id={'hw13-send-null'}
                         onClick={send(null)} // имитация запроса на не корректный адрес
                         xType={'secondary'}
-                    // дописать
-
+                        // дописать
+                        disabled={OnOffBTN}
                     >
                         Send null
                     </SuperButton>
