@@ -1,7 +1,17 @@
-.tech {
-
+.main_container {
+    margin: 25px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 2px 3px 3px 1px gray;
+    height: auto;
 }
 
-.loading {
+.title {
+    margin-bottom: 25px;
+}
 
+.tech {}
+
+.loading {
+    margin: 25px 0;
 }

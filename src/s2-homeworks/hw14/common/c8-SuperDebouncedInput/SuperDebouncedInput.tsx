@@ -1,4 +1,4 @@
-import React, {DetailedHTMLProps, InputHTMLAttributes, ReactNode, useState} from 'react'
+import React, { DetailedHTMLProps, InputHTMLAttributes, ReactNode, useState } from 'react'
 import SuperInputText from '../../../hw04/common/c1-SuperInputText/SuperInputText'
 
 // тип пропсов обычного инпута
@@ -15,8 +15,8 @@ export type SuperDebouncedInputPropsType = Omit<DefaultInputPropsType, 'type'> &
     spanClassName?: string
 } // илм экспортировать тип SuperInputTextPropsType
     & { // плюс специальный пропс SuperPagination
-    onDebouncedChange?: (value: string) => void
-}
+        onDebouncedChange?: (value: string) => void
+    }
 
 const SuperDebouncedInput: React.FC<SuperDebouncedInputPropsType> = (
     {
@@ -30,6 +30,7 @@ const SuperDebouncedInput: React.FC<SuperDebouncedInputPropsType> = (
 
     const onChangeTextCallback = (value: string) => {
         onChangeText?.(value)
+        console.log(value);
 
         if (onDebouncedChange) {
             // делает студент
@@ -42,7 +43,7 @@ const SuperDebouncedInput: React.FC<SuperDebouncedInputPropsType> = (
     }
 
     return (
-        <SuperInputText onChangeText={onChangeTextCallback} {...restProps}/>
+        <SuperInputText onChangeText={onChangeTextCallback} {...restProps} />
     )
 }
 
