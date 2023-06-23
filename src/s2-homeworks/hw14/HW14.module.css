@@ -6,12 +6,28 @@
     height: auto;
 }
 
+.secondary_container {
+    width: 250px;
+}
+
+.response_cpntainer {
+    display: flex;
+    justify-content: space-between;
+}
+
 .title {
     margin-bottom: 25px;
 }
 
-.tech {}
+.tech {
+    padding: 7px 0;
+}
 
 .loading {
-    margin: 25px 0;
+    margin: 7px 0;
+    display: inline;
+}
+
+.list {
+    display: inline;
 }

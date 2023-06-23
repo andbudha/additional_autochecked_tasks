@@ -4,6 +4,7 @@ import s from './HW14.module.css'
 import axios from 'axios'
 import SuperDebouncedInput from './common/c8-SuperDebouncedInput/SuperDebouncedInput'
 import { useSearchParams } from 'react-router-dom'
+import { log } from 'console'
 
 /*
 * 1 - дописать функцию onChangeTextCallback в SuperDebouncedInput
@@ -16,7 +17,7 @@ import { useSearchParams } from 'react-router-dom'
 const getTechs = (find: string) => {
     return axios
         .get<{ techs: string[] }>(
-            'https://samurai.it-incubator.io/api/3.0',
+            'https://samurai.it-incubator.io/api/3.0/homework/test2',
             { params: { find } }
         )
         .catch((e) => {
@@ -35,7 +36,10 @@ const HW14 = () => {
         getTechs(value)
             .then((res) => {
                 // делает студент
-
+                setLoading(false);
+                if (res) {
+                    setTechs(res.data.techs)
+                }
                 // сохранить пришедшие данные
 
                 //
@@ -68,19 +72,21 @@ const HW14 = () => {
         <div id={'hw14'} className={s.main_container}>
             <div className={`${s2.hwTitle} ${s.title}`}>Homework #14</div>
 
-            <div className={s2.hw}>
+            <div className={`${s2.hw} ${s.secondary_container}`}>
                 <SuperDebouncedInput
                     id={'hw14-super-debounced-input'}
                     value={find}
                     onChangeText={onChangeText}
                     onDebouncedChange={sendQuery}
                 />
-
-                <div id={'hw14-loading'} className={s.loading}>
-                    {isLoading ? '...ищем' : <br />}
+                <div className={s.response_cpntainer}>
+                    <div className={s.list}>
+                        {mappedTechs}
+                    </div>
+                    <div id={'hw14-loading'} className={s.loading}>
+                        {isLoading ? '...ищем' : <br />}
+                    </div>
                 </div>
-
-                {mappedTechs}
             </div>
         </div>
     )
