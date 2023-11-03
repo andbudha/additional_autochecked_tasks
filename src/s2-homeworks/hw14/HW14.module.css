@@ -1,33 +1,33 @@
 .main_container {
-    margin: 25px;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 2px 3px 3px 1px gray;
-    height: auto;
+  margin: 25px;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  height: auto;
 }
 
 .secondary_container {
-    width: 250px;
+  width: 250px;
 }
 
 .response_cpntainer {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .title {
-    margin-bottom: 25px;
+  margin-bottom: 25px;
 }
 
 .tech {
-    padding: 7px 0;
+  padding: 7px 0;
 }
 
 .loading {
-    margin: 7px 0;
-    display: inline;
+  margin: 7px 0;
+  display: inline;
 }
 
 .list {
-    display: inline;
+  display: inline;
 }

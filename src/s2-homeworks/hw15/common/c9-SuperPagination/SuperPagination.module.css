@@ -1,11 +1,22 @@
 .pagination {
-    display: flex;
+  background-color: aqua;
+  height: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  padding: 20px 10px;
+  align-items: center;
+  margin: 20px 0;
 }
 
 .text1 {
-
+  padding: 5px;
 }
 
 .text2 {
+  padding: 5px;
+}
 
+.select_box {
+  width: 50px;
 }
