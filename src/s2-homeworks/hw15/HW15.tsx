@@ -28,6 +28,8 @@ type ParamsType = {
 };
 
 const getTechs = (params: ParamsType) => {
+  console.log(params);
+
   return axios
     .get<{ techs: TechType[]; totalCount: number }>(
       'https://incubator-personal-page-back.herokuapp.com/api/3.0/homework/test3',
@@ -113,20 +115,23 @@ const HW15 = () => {
 
         <div className={s.rowHeader}>
           <div className={s.techHeader}>
-            tech
-            <SuperSort sort={sort} value={'tech'} onChange={onChangeSort} />
+            <div>Tech</div>
+            <div className={s.icon_box}>
+              <SuperSort sort={sort} value={'tech'} onChange={onChangeSort} />
+            </div>
           </div>
 
           <div className={s.developerHeader}>
-            developer
-            <SuperSort
-              sort={sort}
-              value={'developer'}
-              onChange={onChangeSort}
-            />
+            <div>Developer</div>
+            <div className={s.icon_box}>
+              <SuperSort
+                sort={sort}
+                value={'developer'}
+                onChange={onChangeSort}
+              />
+            </div>
           </div>
         </div>
-
         {mappedTechs}
       </div>
     </div>
