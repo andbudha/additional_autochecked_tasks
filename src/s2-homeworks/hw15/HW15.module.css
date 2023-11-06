@@ -16,10 +16,34 @@
   padding: 0 20px;
 }
 
+.row {
+  display: flex;
+  background-color: brown;
+  width: 600px;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 .tech {
+  background-color: aqua;
+  height: 100%;
+  width: 300px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 0 20px;
 }
 
 .developer {
+  background-color: bisque;
+  height: 100%;
+  width: 300px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 0 20px;
 }
 
 .techHeader {
@@ -44,10 +68,6 @@
   justify-content: start;
   align-items: center;
   padding: 0 20px;
-}
-
-.row {
-  display: flex;
 }
 
 .loading {
