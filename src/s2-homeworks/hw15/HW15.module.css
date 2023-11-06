@@ -1,4 +1,6 @@
 .main_container {
+  min-height: 400px;
+
   margin: 25px;
   padding: 15px;
   border-radius: 5px;
@@ -69,4 +71,9 @@
 }
 
 .loading {
+  height: 400px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
