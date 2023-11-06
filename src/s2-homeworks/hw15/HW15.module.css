@@ -18,16 +18,15 @@
 
 .row {
   display: flex;
-  background-color: brown;
   width: 600px;
   height: 40px;
   display: flex;
   flex-direction: row;
   align-items: center;
+  border-bottom: 1px solid lightgrey;
 }
 
 .tech {
-  background-color: aqua;
   height: 100%;
   width: 300px;
   display: flex;
@@ -37,7 +36,6 @@
 }
 
 .developer {
-  background-color: bisque;
   height: 100%;
   width: 300px;
   display: flex;
