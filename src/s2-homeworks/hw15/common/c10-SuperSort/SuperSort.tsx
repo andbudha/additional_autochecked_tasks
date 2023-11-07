@@ -28,8 +28,6 @@ const SuperSort: React.FC<SuperSortPropsType> = ({
   onChange,
   id = 'hw15',
 }) => {
-  console.log(value);
-
   const up = '0' + value;
   const down = '1' + value;
 

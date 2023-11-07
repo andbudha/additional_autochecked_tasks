@@ -48,8 +48,6 @@ const HW15 = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [techs, setTechs] = useState<TechType[]>([]);
 
-  console.log(sort);
-
   const sendQuery = (params: any) => {
     setLoading(true);
     getTechs(params).then((res) => {
@@ -79,11 +77,20 @@ const HW15 = () => {
   };
 
   const onChangeSort = (newSort: string) => {
+    console.log(newSort);
+
     // делает студент
     setSort(newSort);
     setPage(1); // при сортировке сбрасывать на 1 страницу
-    sendQuery({ newSort, page, count });
-    setSearchParams();
+    //sendQuery({ newSort, page, count });
+    //setSearchParams();
+    if (newSort === '0tech') {
+      setTechs(techs.reverse());
+    } else if (newSort === '1tech') {
+      setTechs(techs.reverse());
+    } else {
+      setTechs(techs);
+    }
     //
   };
 
@@ -105,7 +112,6 @@ const HW15 = () => {
       </div>
     </div>
   ));
-
   return (
     <div id={'hw15'} className={s.main_container}>
       {isLoading ? (
