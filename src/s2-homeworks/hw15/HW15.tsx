@@ -48,16 +48,15 @@ const HW15 = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [techs, setTechs] = useState<TechType[]>([]);
 
+  console.log(sort);
+
   const sendQuery = (params: any) => {
     setLoading(true);
     getTechs(params).then((res) => {
       // делает студент
       // сохранить пришедшие данные
       if (res) {
-        console.log(res.data.techs);
-
         setTechs(res.data.techs);
-
         setTotalCount(res.data.totalCount);
       }
       setLoading(false);
@@ -69,9 +68,9 @@ const HW15 = () => {
     setPage(newPage);
     setCount(newCount);
     const pageQuery: { page?: string } =
-      newPage === 1 ? {} : { page: newPage + '' };
+      newPage === 1 ? { page: 1 + '' } : { page: newPage + '' };
     const countQuery: { count?: string } =
-      newCount === 1 ? {} : { count: newCount + '' };
+      newCount === 4 ? { count: 4 + '' } : { count: newCount + '' };
     const { page, count, ...restQueries } = Object.fromEntries(searchParams);
 
     const allQuery = { ...restQueries, ...pageQuery, ...countQuery };
@@ -106,7 +105,6 @@ const HW15 = () => {
       </div>
     </div>
   ));
-  console.log(mappedTechs[0]);
 
   return (
     <div id={'hw15'} className={s.main_container}>
