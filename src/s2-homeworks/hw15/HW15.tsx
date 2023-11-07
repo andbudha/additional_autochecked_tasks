@@ -66,9 +66,9 @@ const HW15 = () => {
     setPage(newPage);
     setCount(newCount);
     const pageQuery: { page?: string } =
-      newPage === 1 ? { page: 1 + '' } : { page: newPage + '' };
+      newPage === 1 ? {} : { page: String(newPage) };
     const countQuery: { count?: string } =
-      newCount === 4 ? { count: 4 + '' } : { count: newCount + '' };
+      newCount === 4 ? {} : { count: newCount + '' };
     const { page, count, ...restQueries } = Object.fromEntries(searchParams);
 
     const allQuery = { ...restQueries, ...pageQuery, ...countQuery };
@@ -77,21 +77,14 @@ const HW15 = () => {
   };
 
   const onChangeSort = (newSort: string) => {
-    console.log(newSort);
-
-    // делает студент
     setSort(newSort);
-    setPage(1); // при сортировке сбрасывать на 1 страницу
-    //sendQuery({ newSort, page, count });
-    //setSearchParams();
-    if (newSort === '0tech') {
-      setTechs(techs.reverse());
-    } else if (newSort === '1tech') {
-      setTechs(techs.reverse());
-    } else {
-      setTechs(techs);
-    }
-    //
+    setPage(1);
+    const sortQuery: { sort?: string } =
+      newSort === '' ? {} : { sort: newSort };
+    const { page, sort, ...restQueries } = Object.fromEntries(searchParams);
+    const allQuery = { ...restQueries, ...sortQuery };
+    sendQuery(allQuery);
+    setSearchParams(allQuery);
   };
 
   useEffect(() => {
